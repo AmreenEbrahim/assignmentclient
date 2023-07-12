@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import DataTable from "react-data-table-component";
 import Papaparse from "papaparse";
-
+import { setToken } from "../actions/setToken";
 import axios from "../axios/axios";
-
+import { useDispatch } from "react-redux";
 import "./user.css";
 const Csvfields = ["name", "gender", "email", "status"];
 function UserPage() {
+  let dispatch = useDispatch();
   const initArray = [];
   const [limit, setLimit] = useState(4);
   const [users, setUsers] = useState([]);
@@ -26,6 +27,7 @@ function UserPage() {
             <div className="man_text">{item.name}</div>
 
             <div className="man_text">{item.status}</div>
+            <div className="man_text">{item.email}</div>
             <div className="man_text">{item.gender}</div>
           </div>
         ),
@@ -70,7 +72,11 @@ function UserPage() {
   // useEffect(()=>{
   //   console.log(counts.totalUsers)
   // })
-
+  const logout = () => {
+    localStorage.removeItem("AuthData");
+    localStorage.removeItem("AuthToken");
+    dispatch(setToken(""));
+  };
   return (
     <div>
       {/* <div className='right_panel'> */}
@@ -84,6 +90,7 @@ function UserPage() {
 
       <div className="user_management_list">
         <button onClick={() => expUserCsv()}>Download User List</button>
+        <button onClick={logout}>Logout</button>
         <Row>
           <Col lg="8" md="12" sm="12">
             <div className="usermaageleft">
@@ -140,43 +147,37 @@ export const options = {
 
 const columns = [
   {
+    name: "profile pic",
+    selector: (row) => row.name,
+    sortable: true,
+    reorder: true,
+    width: "100px",
+  },
+  {
     name: "Name",
     selector: (row) => row.name,
     sortable: true,
     reorder: true,
-    width: "200px",
+    width: "300px",
   },
   {
-    name: "Email",
+    name: "gender",
+    selector: (row) => row.gender,
+    sortable: true,
+    reorder: true,
+    width: "100px",
+  },
+  {
+    name: "email",
     selector: (row) => row.email,
     sortable: true,
     reorder: true,
+    width: "100px",
   },
 
   {
-    name: "Phone No.",
-    selector: (row) => row.phone,
-    sortable: true,
-    reorder: true,
-  },
-
-  {
-    name: "View",
-    selector: (row) => row.view,
-    sortable: true,
-    reorder: true,
-    width: "70px",
-  },
-  {
-    name: "Action",
-    selector: (row) => row.action,
-    sortable: true,
-    reorder: true,
-    width: "70px",
-  },
-  {
-    name: "Active",
-    selector: (row) => row.active,
+    name: "Status",
+    selector: (row) => row.status,
     sortable: true,
     reorder: true,
     width: "70px",
