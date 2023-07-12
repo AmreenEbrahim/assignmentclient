@@ -1,0 +1,350 @@
+.user_partts {
+  /* background: #E5E5E5; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.right_panel {
+  max-width: 75%;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.user_inner_partts {
+  padding: 70px 60px 35px 60px;
+}
+.total_users_report {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total_users_left {
+  max-width: 70%;
+  width: 100%;
+}
+
+.total_users_right {
+  max-width: 30%;
+  width: 100%;
+}
+.download_report {
+  display: flex;
+  justify-content: flex-end;
+}
+.total_users_left h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.total_and_new_user {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.t_userers {
+  max-width: 48%;
+  width: 100%;
+  padding: 30px 23px;
+  background: #75859d;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tusers_heading h2 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.tusers_heading h4 {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 42px;
+  color: #ffffff;
+  margin-bottom: 0px;
+}
+
+.tusers_heading h4 sub {
+  font-size: 11px;
+  color: #fff;
+}
+
+.drop_partts121 button {
+  background: #75859d;
+  border: 0.4px solid #1d242e;
+  border-radius: 4px;
+  width: 180px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 15px;
+  color: #ffffff;
+  padding: 0 10px;
+}
+.drop_partts121 button:after {
+  position: absolute;
+  content: "";
+  border: none;
+  background: url(../../assets/images/drop_down.png) no-repeat;
+  width: 11px;
+  background-position: 98% center;
+  height: 6px;
+  margin-left: 14px;
+  margin-top: 9px;
+}
+
+.user_management_list {
+  padding: 26px 60px;
+  background: #384659;
+}
+
+.manage_heading_search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.manage_heading_search h2 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.manage_texfieldt {
+  width: 170px;
+  height: 26px;
+  position: relative;
+}
+
+.manage_search_boxxx,
+.manage_search_boxxx:focus {
+  width: 100%;
+  height: 100%;
+  background: #2c3949;
+  border-radius: 26px;
+  border: 0px;
+  padding: 0 30px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+  outline: 0px;
+  box-shadow: none;
+}
+
+.manage_search_boxxx::placeholder {
+  font-size: 12px;
+  line-height: 15px;
+  color: #556578;
+}
+
+.search_imgg_manage {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+}
+
+.manage_table {
+  background: #495a71;
+  border-radius: 10px;
+  /* overflow: hidden; */
+  margin-top: 20px;
+}
+.manage_table table {
+  margin-bottom: 0px;
+}
+.manage_table .table td,
+.manage_table .table th,
+.manage_table .table thead th {
+  border-top: 0px;
+  border-bottom: 1px solid #6d7d94;
+  vertical-align: middle;
+}
+
+.manage_table .table th {
+  padding: 10px 10px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: #ffffff;
+}
+
+.management_list_name {
+  display: flex;
+  align-items: center;
+}
+
+.man_user {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+
+.man_user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.man_text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 10px;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.man_email a,
+.man_email,
+.man_ph a,
+.man_ph {
+  font-weight: 400;
+  font-size: 10px;
+  /* line-height: 5px; */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.three_dotss .drop_partts button:after {
+  content: none;
+}
+
+.three_dotss .drop_partts .dropdown-menu {
+  width: 80px;
+  min-width: 80px;
+  padding: 10px;
+  background: #637896;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.three_dotss .drop_partts .dropdown-menu a {
+  padding: 0px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.three_dotss .drop_partts .dropdown-menu a img {
+  margin-right: 12px;
+}
+
+.three_dotss .drop_partts .dropdown-menu .dropdown-item:focus,
+.three_dotss .drop_partts .dropdown-menu .dropdown-item:hover,
+.three_dotss .drop_partts .dropdown-menu .dropdown-item.active,
+.dropdown-item:active {
+  background: transparent;
+  color: #fff;
+}
+
+.dognut_partts {
+  background: #495a71;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.data_count {
+  position: absolute;
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+/* Pagination start */
+
+.pagination_ul {
+  margin-top: 30px;
+}
+.pagination_ul ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination_ul ul li {
+  list-style: none;
+  margin: 0 5px;
+}
+.pagination_ul ul li a {
+  background: #495a71;
+  padding: 2px 7px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.pagination_ul ul li a:hover {
+  text-decoration: none;
+}
+.pagination_ul ul li.active {
+  color: #fff;
+  font-size: 15px;
+}
+.man_user img {
+  border-radius: 100%;
+}
+/* Pagination End */
+
+.rdt_Table {
+  background-color: transparent !important;
+}
+
+.rdt_TableHeadRow {
+  background-color: transparent !important;
+}
+.rdt_TableCell div:first-child {
+  overflow: visible !important;
+}
+@media screen and (max-width: 1199px) {
+  .total_and_new_user {
+    display: block;
+  }
+  .t_userers {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .manage_table table {
+    width: 160%;
+  }
+  .data_count {
+    font-size: 20px;
+    top: 64%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .data_count {
+    font-size: 40px;
+    top: 52%;
+  }
+  .total_users_report {
+    display: block;
+  }
+  .total_users_left,
+  .total_users_right {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .user_partts {
+    display: block;
+  }
+  .right_panel {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+}
