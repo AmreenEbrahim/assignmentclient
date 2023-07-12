@@ -18,20 +18,6 @@ const Login = () => {
   const [mask, setMask] = useState(false);
   //const [error, setError] = useState("")
 
-  const emailValidatior = () => {
-    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (creds.email.trim() === "") {
-      setCredsError({ emailerr: "Email is required" });
-      return false;
-    } else if (reg.test(creds.email) === false) {
-      setCredsError({ emailerr: "Email is invalid" });
-      return false;
-    } else {
-      setCredsError({ emailerr: "" });
-      return true;
-    }
-  };
-
   const passwordValidator = () => {
     if (creds.password.trim() === "") {
       setCredsError({ passworderr: "Password is required" });
@@ -59,15 +45,15 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (emailValidatior() && passwordValidator())
+    if (passwordValidator())
       await axios
         .post("/login", creds)
         .then((res) => {
           console.log("res", res.data);
-          if (res.data.success === true) {
+          if (res.data) {
             setShow({ ...show, alert: false });
             const data = {
-              userDetails: res.data.data,
+              userDetails: res.data,
               token: res.data.token,
             };
             dispatch(setToken(res.data.token));
@@ -84,7 +70,6 @@ const Login = () => {
 
   return (
     <>
-      hii
       <div className="login_box">
         <div className="login_right">
           <div className="login_into_dashboard">
@@ -103,7 +88,6 @@ const Login = () => {
                       value={creds.email}
                       //onChange={(e)=>setCreds({...creds, email:e.target.value})}
                       onChange={handleChange}
-                      onBlur={emailValidatior}
                       className="field_part"
                     />
                   </div>

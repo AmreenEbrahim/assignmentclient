@@ -1,36 +1,17 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Modal,
-  Button,
-  Form,
-  Dropdown,
-  Table,
-} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import DataTable from "react-data-table-component";
 import Papaparse from "papaparse";
-import { Dropdown } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
-import axios from "../../axios/axios";
-import { useSelector } from "react-redux";
 
-import { Doughnut } from "react-chartjs-2";
-import Switch from "react-switch";
+import axios from "../axios/axios";
+
 import "./user.css";
-const Csvfields = ["Name", "Username", "Email", "Status"];
+const Csvfields = ["name", "gender", "email", "status"];
 function UserPage() {
   const initArray = [];
   const [limit, setLimit] = useState(4);
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
-
-  const handleStatusChange = (event) => {
-    console.log(event);
-    //console.log({e})
-    //axios.post("/toggle-status",)
-  };
 
   const getUsers = () => {
     let userDetails = [];
@@ -56,8 +37,8 @@ function UserPage() {
     await axios
       .get(`/`)
       .then((res) => {
-        console.log(res.data);
-        if (res.data.success === true) {
+        console.log("==", res.data);
+        if (res.data) {
           setUsers(res.data.users);
         } else {
           console.log("error");
@@ -67,13 +48,13 @@ function UserPage() {
         console.log("err", err);
       });
   };
-  const ExpUserCsv = () => {
-    setLoading(true);
-
+  const expUserCsv = () => {
+    console.log("users", users);
     let csv = Papaparse.unparse({
       data: users,
       fields: Csvfields,
     });
+    console.log("csv", csv);
     let csvData = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     let csvURL = null;
     csvURL = window.URL.createObjectURL(csvData);
@@ -102,7 +83,7 @@ function UserPage() {
       </div>
 
       <div className="user_management_list">
-        <button onClick={() => csvExp()}>Download User List</button>
+        <button onClick={() => expUserCsv()}>Download User List</button>
         <Row>
           <Col lg="8" md="12" sm="12">
             <div className="usermaageleft">
